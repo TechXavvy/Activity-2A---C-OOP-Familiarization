@@ -27,9 +27,18 @@ namespace Activity_2A___C__OOP_Familiarization
 
             Console.WriteLine("\n----------------------------------------------------------");
             Console.WriteLine("\nBorrowing Items:");
-            libitems[1].Borrowing();
-            libitems[1].Borrowing();
-            libitems[5].Borrowing();
+            int[] borrowIndices = {1, 1, 5, 10};
+            foreach (int index in borrowIndices)
+            {
+                if (index < 0 || index >= libitems.Count)
+                {
+                    Console.WriteLine($"\nError: Index {index} is out of range. Unable to borrow item.");
+                }
+                else
+                {
+                    libitems[index].Borrowing();
+                }
+            }
 
             Console.WriteLine("\n----------------------------------------------------------");
             Console.WriteLine("\nUpdated Items in Library:");
